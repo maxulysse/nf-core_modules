@@ -109,8 +109,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
                     process.out.versions,
                     file(process.out.intervals[0][1]).name,
@@ -138,8 +138,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
                     process.out.versions,
                     file(process.out.intervals[0][1]).name,

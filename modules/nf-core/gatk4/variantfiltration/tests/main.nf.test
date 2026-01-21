@@ -40,8 +40,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out.versions,
                                   path(process.out.vcf.get(0).get(1)).vcf.variantsMD5,
                                   file(process.out.tbi.get(0).get(1)).name).match() },
@@ -81,8 +81,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out.versions,
                                   path(process.out.vcf.get(0).get(1)).vcf.variantsMD5,
                                   file(process.out.tbi.get(0).get(1)).name).match() },
@@ -122,8 +122,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out.versions,
                                   path(process.out.vcf.get(0).get(1)).vcf.variantsMD5,
                                   file(process.out.tbi.get(0).get(1)).name).match() },

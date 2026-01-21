@@ -26,8 +26,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out.bam).match("bam") },
                 { assert snapshot(process.out.bai).match("bai") },
                 { assert snapshot(process.out.versions).match("versions") },
@@ -56,8 +56,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out.bam).match("multi bam") },
                 { assert snapshot(process.out.bai).match("multi bai") },
                 { assert snapshot(process.out.versions).match("multi versions") },
@@ -87,8 +87,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(file(process.out.cram[0][1]).name).match("multi cram")},
                 { assert snapshot(file(process.out.crai[0][1]).name).match("multi crai") },
                 { assert snapshot(process.out.versions).match("multi cram versions") },

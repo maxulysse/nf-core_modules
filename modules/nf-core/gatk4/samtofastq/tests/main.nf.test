@@ -24,8 +24,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
 					path(process.out.fastq[0][1]).linesGzip[3..7],
 					process.out.versions
@@ -49,8 +49,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
 					process.out.fastq[0][1].collect { path(it).linesGzip[3..7] },
 					process.out.versions
@@ -74,8 +74,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
 					process.out.fastq[0][1].collect { file(it).name },
 					process.out.versions

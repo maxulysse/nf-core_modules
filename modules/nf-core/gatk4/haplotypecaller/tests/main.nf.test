@@ -33,8 +33,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
                     file(process.out.vcf[0][1]).name,
                     file(process.out.tbi[0][1]).name,
@@ -68,8 +68,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
                     file(process.out.vcf[0][1]).name,
                     file(process.out.tbi[0][1]).name,
@@ -103,8 +103,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
                     file(process.out.vcf[0][1]).name,
                     file(process.out.tbi[0][1]).name,
@@ -138,8 +138,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(
                     file(process.out.vcf[0][1]).name,
                     file(process.out.tbi[0][1]).name,

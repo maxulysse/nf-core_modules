@@ -54,9 +54,7 @@ process GATK4SPARK_BASERECALIBRATOR {
     """
 
     stub:
-    def prefix = task.ext.prefix ?: "${meta.id}"
-
-    """
+    def prefix = task.ext.prefix ?: "${meta.id}"    """
     touch ${prefix}.table
 
     cat <<-END_VERSIONS > versions.yml
